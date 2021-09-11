@@ -18,6 +18,10 @@ public class BaseConvertor {
         if (negative) {
             quaternaryStr = String.format("-%s", quaternaryStr);
         }
+
+        if (quaternaryStr.equals("")) {
+            return 0;
+        }
         return Integer.parseInt(quaternaryStr);
     }
 
