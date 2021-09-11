@@ -1,6 +1,6 @@
 package bsu.cs495.quarternaryCalculator;
 
-public class CalculatorClass {
+public class Calculator {
 
     int multiplication(int number1, int number2){
 
