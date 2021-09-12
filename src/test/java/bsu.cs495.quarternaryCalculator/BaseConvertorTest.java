@@ -105,7 +105,7 @@ public class BaseConvertorTest {
     @Test
     void testSubtraction(){
         Calculator calc = new Calculator();
-        int actual = calc.subtraction(4, 4);
+        int actual = calc.subtraction(3, 3);
         int expected = 0;
         Assertions.assertEquals(expected, actual);
     }
@@ -113,7 +113,7 @@ public class BaseConvertorTest {
     @Test
     void testDivision(){
         Calculator calc = new Calculator();
-        int actual = calc.division(8, 4);
+        int actual = calc.division(10, 2);
         int expected = 2;
         Assertions.assertEquals(expected, actual);
     }
