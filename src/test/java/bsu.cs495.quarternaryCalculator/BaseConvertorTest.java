@@ -1,10 +1,11 @@
 package bsu.cs495.quarternaryCalculator;
 
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-public class testBaseConvertor {
+public class BaseConvertorTest {
 
     @Test
     @DisplayName("Test base10To4 computes base10(0) => base4(0) correctly")
