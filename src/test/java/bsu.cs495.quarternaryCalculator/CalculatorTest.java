@@ -16,8 +16,8 @@ public class CalculatorTest
     @Test
     void testSum(){
         Calculator calc = new Calculator();
-        int actual = calc.sum(2, 2);
-        int expected = 10;
+        int actual = calc.sum(11, 12);
+        int expected = 23;
         Assertions.assertEquals(expected, actual);
     }
 

@@ -37,6 +37,7 @@ public class UI {
         frame.setSize(300, 400);
         frame.setVisible(true);
         frame.add(panel);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         panel.setLayout(null);
 
