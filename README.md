@@ -14,7 +14,7 @@
     <li>'square-root' for finding the square root of previous digit</li>
 </ul>
 <p>
-    To display your answer, simply press the '='. You can also press 'C' to remove the last input.
+    To display your answer, simply press the '='. You can also press 'C' to clear the current operation.
 </p>
 
 <h2>General Idea of Process</h2>

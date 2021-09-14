@@ -1,10 +1,13 @@
 package bsu.cs495.quarternaryCalculator;
 
 import javax.swing.*;
+import javax.swing.border.Border;
 import java.awt.*;
 
 public class UI {
     public static void main(String[] args){
+        Controller controller = new Controller();
+
         JFrame frame = new JFrame();
         JPanel panel = new JPanel();
 
@@ -20,6 +23,8 @@ public class UI {
         JButton broot = new JButton("\u221A");
         JButton bback = new JButton("<--");
         JButton bequals = new JButton("=");
+        JLabel outputField = new JLabel();
+        JLabel operationField = new JLabel();
 
         ButtonGroup radioGroup = new ButtonGroup();
         JRadioButton decimal = new JRadioButton("Decimal");
@@ -45,6 +50,8 @@ public class UI {
         broot.setBounds(92,210,50,50);
         bback.setBounds(142,210,50,50);
         bequals.setBounds(192,210,50,50);
+        outputField.setBounds(42,45, 200, 35);
+        operationField.setBounds(42, 15, 200, 25);
 
         decimal.setBounds(50, 275, 100,20);
         quaternary.setBounds(50,300, 100,20);
@@ -62,11 +69,25 @@ public class UI {
         panel.add(broot);
         panel.add(bback);
         panel.add(bequals);
+        panel.add(outputField);
+        panel.add(operationField);
 
         panel.add(decimal);
         panel.add(quaternary);
 
 
+        outputField.setText(controller.showInput());
+        outputField.setHorizontalAlignment(SwingConstants.RIGHT);
+        outputField.setFont(new Font("Serif", Font.PLAIN, 18));
+        outputField.setBorder(blackBorder());
+
+        operationField.setHorizontalAlignment(SwingConstants.LEFT);
+        operationField.setFont(new Font("Sherif", Font.PLAIN, 12));
+        operationField.setBorder(blackBorder());
+
     }
 
+    static Border blackBorder() {
+        return BorderFactory.createLineBorder(Color.BLACK);
+    }
 }
