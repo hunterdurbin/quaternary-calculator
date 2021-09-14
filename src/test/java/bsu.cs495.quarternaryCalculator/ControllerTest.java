@@ -84,7 +84,7 @@ public class ControllerTest {
         Controller controller = new Controller();
         controller.appendDigitToInput(2);
         controller.startOperation(Operation.SQUARE);
-        Assertions.assertEquals(10, controller.getAnswer());
+        Assertions.assertEquals(10, controller.getAnswer(4));
     }
 
     @Test
@@ -92,7 +92,7 @@ public class ControllerTest {
         Controller controller = new Controller();
         controller.appendDigitToInput(10);
         controller.startOperation(Operation.SQUARE_ROOT);
-        Assertions.assertEquals(2, controller.getAnswer());
+        Assertions.assertEquals(2, controller.getAnswer(4));
     }
 
     @Test
@@ -103,7 +103,7 @@ public class ControllerTest {
         controller.startOperation(Operation.ADD);
         controller.appendDigitToInput(21);
         controller.equalsInitiate();
-        Assertions.assertEquals(31, controller.getAnswer());
+        Assertions.assertEquals(31, controller.getAnswer(4));
     }
 
     @Test
@@ -114,7 +114,7 @@ public class ControllerTest {
         controller.startOperation(Operation.SUBTRACT);
         controller.appendDigitToInput(103);
         controller.equalsInitiate();
-        Assertions.assertEquals(110, controller.getAnswer());
+        Assertions.assertEquals(110, controller.getAnswer(4));
     }
 
     @Test
@@ -125,7 +125,7 @@ public class ControllerTest {
         controller.startOperation(Operation.MULTIPLY);
         controller.appendDigitToInput(2);
         controller.equalsInitiate();
-        Assertions.assertEquals(20, controller.getAnswer());
+        Assertions.assertEquals(20, controller.getAnswer(4));
     }
 
     @Test
@@ -136,7 +136,7 @@ public class ControllerTest {
         controller.startOperation(Operation.DIVIDE);
         controller.appendDigitToInput(2);
         controller.equalsInitiate();
-        Assertions.assertEquals(2, controller.getAnswer());
+        Assertions.assertEquals(2, controller.getAnswer(4));
     }
 
     @Test

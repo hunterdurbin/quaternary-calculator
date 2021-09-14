@@ -10,7 +10,7 @@ public class Controller {
     private boolean isInput = false; // Only false after number1 is stored, but before any digit is entered for number2
     private boolean isNumber1 = false;
     private boolean isNumber2 = false;
-    private int baseMode;
+    private boolean isAnswer = false;
 
     public Controller() {
         this.operation = Operation.NONE;
@@ -18,15 +18,6 @@ public class Controller {
         this.number1 = 0;
         this.number2 = 0;
         this.answer = 0;
-        this.baseMode = 4;
-    }
-
-    public void changeModeToBase10() {
-        baseMode = 10;
-    }
-
-    public void changeModeToBase4() {
-        baseMode = 4;
     }
 
     public void appendDigitToInput(int digit) {
@@ -54,25 +45,23 @@ public class Controller {
         answer = 0;
         isNumber1 = false;
         isNumber2 = false;
+        isAnswer = false;
     }
 
     public int getInput() {
         return input;
     }
 
-    public int getAnswer() {
-        switch (baseMode) {
-            case 10:
-                BaseConvertor convertor = new BaseConvertor();
-                return convertor.base4To10(answer);
-            case 4:
-                return answer;
+    public int getAnswer(int base) {
+        if (base == 10) {
+            BaseConvertor convertor = new BaseConvertor();
+            return convertor.base4To10(answer);
         }
         return answer;
     }
 
-    public String showAnswer() {
-        return String.valueOf(getAnswer());
+    public String showAnswer(int base) {
+        return String.valueOf(getAnswer(base));
     }
 
     public String showInput() {
