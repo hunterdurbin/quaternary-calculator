@@ -86,51 +86,74 @@ public class BaseConvertorTest {
 
     }
 
-    @Test
-    void testMultiplication(){
-        Calculator calc = new Calculator();
-        int actual = calc.multiplication(2, 2);
-        int expected = 10;
-        Assertions.assertEquals(expected, actual);
-    }
+    //Possibly will add tests for negative number calculations with the base4To10 method. (Not required according to Ergin)
 
     @Test
-    void testSum(){
-        Calculator calc = new Calculator();
-        int actual = calc.sum(2, 2);
-        int expected = 10;
-        Assertions.assertEquals(expected, actual);
-    }
-
-    @Test
-    void testSubtraction(){
-        Calculator calc = new Calculator();
-        int actual = calc.subtraction(4, 4);
+    @DisplayName("Test base4To10 computes base4(0) => base10(0) correctly")
+    void testBase4To10_1() {
+        BaseConvertor convertor = new BaseConvertor();
+        int actual = convertor.base4To10(0);
         int expected = 0;
         Assertions.assertEquals(expected, actual);
     }
 
     @Test
-    void testDivision(){
-        Calculator calc = new Calculator();
-        int actual = calc.division(8, 4);
-        int expected = 2;
+    @DisplayName("Test base4To10 computes base4(110) => base10(20) correctly")
+    void testBase4To10_2() {
+        BaseConvertor convertor = new BaseConvertor();
+        int actual = convertor.base4To10(110);
+        int expected = 20;
         Assertions.assertEquals(expected, actual);
     }
 
     @Test
-    void testSquareRoot(){
-        Calculator calc = new Calculator();
-        int actual = calc.squareRoot(21);
-        int expected = 3;
+    @DisplayName("Test base4To10 computes base4(312) => base10(54) correctly")
+    void testBase4To10_3() {
+        BaseConvertor convertor = new BaseConvertor();
+        int actual = convertor.base4To10(312);
+        int expected = 54;
         Assertions.assertEquals(expected, actual);
     }
 
     @Test
-    void testSquare(){
-        Calculator calc = new Calculator();
-        int actual = calc.square(2);
-        int expected = 10;
+    @DisplayName("Test base4To10 computes base4(20132) => base10(542) correctly")
+    void testBase4To10_4() {
+        BaseConvertor convertor = new BaseConvertor();
+        int actual = convertor.base4To10(20132);
+        int expected = 542;
         Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    @DisplayName("Test base4To10 computes base4(3333333) => base10(16383) correctly")
+    void testBase4To10_5_MaxValueNeeded() {
+        BaseConvertor convertor = new BaseConvertor();
+        int actual = convertor.base4To10(3333333);
+        int expected = 16383;
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    void testBase4To10_6_Many() {
+        BaseConvertor convertor = new BaseConvertor();
+        int[] base4Numbers = {0, 10, 13, 23, 102, 212, 223, 300, 1000, 20132, 3333333};
+        int[] actual = new int[base4Numbers.length];
+        for (int i = 0; i < base4Numbers.length; i++) {
+            actual[i] = convertor.base4To10(base4Numbers[i]);
+        }
+        int[] expected = {0, 4, 7, 11, 18, 38, 43, 48, 64, 542, 16383};
+        Assertions.assertAll(
+                () -> Assertions.assertEquals(expected[0], actual[0]),
+                () -> Assertions.assertEquals(expected[1], actual[1]),
+                () -> Assertions.assertEquals(expected[2], actual[2]),
+                () -> Assertions.assertEquals(expected[3], actual[3]),
+                () -> Assertions.assertEquals(expected[4], actual[4]),
+                () -> Assertions.assertEquals(expected[5], actual[5]),
+                () -> Assertions.assertEquals(expected[6], actual[6]),
+                () -> Assertions.assertEquals(expected[8], actual[8]),
+                () -> Assertions.assertEquals(expected[9], actual[9]),
+                () -> Assertions.assertEquals(expected[10], actual[10])
+        );
+
     }
 }
