@@ -133,21 +133,18 @@ public class UI {
             operationField.setText(controller.buildOperation());
         });
 
-
-        //        JButton bsquare = new JButton("^");
         bsquare.addActionListener(e -> {
             controller.startOperation(Operation.SQUARE);
             operationField.setText(controller.buildOperation());
             outputField.setText(controller.showAnswer(4));
         });
 
-        //        JButton broot = new JButton("\u221A");
         broot.addActionListener(e -> {
             controller.startOperation(Operation.SQUARE_ROOT);
             operationField.setText(controller.buildOperation());
             outputField.setText(controller.showAnswer(4));
         });
-        //        JButton bback = new JButton("<--");
+
         bback.addActionListener(e -> {
             controller.deleteRecentDigitInInput();
             outputField.setText(controller.showInput());
@@ -155,13 +152,11 @@ public class UI {
 
         });
 
-
         bequals.addActionListener(e -> {
             controller.equalsInitiate();
             operationField.setText(controller.buildOperation());
             outputField.setText(controller.showAnswer(4));
         });
-
 
     }
 
