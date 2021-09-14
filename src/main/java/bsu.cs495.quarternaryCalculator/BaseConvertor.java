@@ -25,6 +25,7 @@ public class BaseConvertor {
         return Integer.parseInt(quaternaryStr);
     }
 
+
     public int base4To10(int base4Number) {
         int multiplier;
         int base10total = 0;
@@ -71,5 +72,4 @@ public class BaseConvertor {
     private boolean isNegative(int number) {
         return number < 0;
     }
-
 }

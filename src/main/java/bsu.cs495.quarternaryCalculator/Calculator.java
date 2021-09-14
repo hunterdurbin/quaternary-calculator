@@ -6,7 +6,7 @@ public class Calculator {
         BaseConvertor b = new BaseConvertor();
         int input1 = b.base4To10(number1);
         int input2 = b.base4To10(number2);
-        int result = (input1 * input2);
+        int result = (input1 + input2);
         return b.base10To4(result);
     }
 

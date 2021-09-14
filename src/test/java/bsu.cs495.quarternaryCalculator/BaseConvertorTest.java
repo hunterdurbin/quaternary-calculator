@@ -86,5 +86,51 @@ public class BaseConvertorTest {
 
     }
 
+    @Test
+    void testMultiplication(){
+        Calculator calc = new Calculator();
+        int actual = calc.multiplication(2, 2);
+        int expected = 10;
+        Assertions.assertEquals(expected, actual);
+    }
 
+    @Test
+    void testSum(){
+        Calculator calc = new Calculator();
+        int actual = calc.sum(2, 2);
+        int expected = 10;
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    void testSubtraction(){
+        Calculator calc = new Calculator();
+        int actual = calc.subtraction(4, 4);
+        int expected = 0;
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    void testDivision(){
+        Calculator calc = new Calculator();
+        int actual = calc.division(8, 4);
+        int expected = 2;
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    void testSquareRoot(){
+        Calculator calc = new Calculator();
+        int actual = calc.squareRoot(21);
+        int expected = 3;
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    void testSquare(){
+        Calculator calc = new Calculator();
+        int actual = calc.square(2);
+        int expected = 10;
+        Assertions.assertEquals(expected, actual);
+    }
 }
