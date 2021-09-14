@@ -11,20 +11,44 @@ public class ControllerTest {
     @DisplayName("Test that a digit gets input to the current input value")
     @Disabled("Not Implemented yet")
     void testAppendDigitToInput_1() {
-        Assertions.fail();
+        Controller controller = new Controller();
+        controller.appendDigitToInput(0);
+        Assertions.assertEquals("0", controller.getInput());
     }
 
     @Test
     @DisplayName("Test that a digit gets input to the current input value")
     @Disabled("Not Implemented yet")
     void testAppendDigitToInput_2() {
-        Assertions.fail();
+        Controller controller = new Controller();
+        controller.appendDigitToInput(1);
+        controller.appendDigitToInput(0);
+        controller.appendDigitToInput(3);
+        Assertions.assertEquals("103", controller.getInput());
     }
 
     @Test
-    @Disabled
+    @DisplayName("Test that a digit gets input to the current input value")
+    @Disabled("Not Implemented yet")
+    void testAppendDigitToInput_3() {
+        Controller controller = new Controller();
+        controller.appendDigitToInput(0);
+        controller.appendDigitToInput(0);
+        controller.appendDigitToInput(1);
+        controller.appendDigitToInput(4);
+        controller.appendDigitToInput(0);
+        controller.appendDigitToInput(2);
+        Assertions.assertEquals("1402", controller.getInput());
+    }
+
+    @Test
     void testGetInput() {
-        Assertions.fail();
+        Controller controller = new Controller();
+        Assertions.assertEquals("0", controller.getInput());
+    }
+
+    @Test
+    void testStoreInput() {
     }
 
     @Test
