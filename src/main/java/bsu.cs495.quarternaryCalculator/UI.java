@@ -161,12 +161,12 @@ public class UI {
 
         quaternary.addActionListener(e -> {
             controller.changeBase(4);
-            outputField.setText(controller.showAnswer());
+            outputField.setText(controller.showAuto());
         });
 
         decimal.addActionListener(e -> {
             controller.changeBase(10);
-            outputField.setText(controller.showAnswer());
+            outputField.setText(controller.showAuto());
         });
 
     }
