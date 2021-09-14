@@ -25,7 +25,6 @@ public class UI {
         JButton broot = new JButton("\u221A");
         JButton bback = new JButton("<--");
         JButton bequals = new JButton("=");
-        JButton bclear = new JButton("C");
         JLabel outputField = new JLabel();
         JLabel operationField = new JLabel();
 
