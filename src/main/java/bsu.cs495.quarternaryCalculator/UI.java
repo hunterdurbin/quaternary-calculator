@@ -88,7 +88,7 @@ public class UI {
         operationField.setBorder(blackBorder());
 
 
-        //Event Listeners - commented out code has method that isn't implemented yet
+        //Event Listeners
         b0.addActionListener(e -> {
             controller.appendDigitToInput(0);
             outputField.setText(controller.showInput());
@@ -112,7 +112,6 @@ public class UI {
             outputField.setText(controller.showInput());
             operationField.setText(controller.buildOperation());
         });
-        //        JButton bsum = new JButton("+");
 
         bsum.addActionListener(e -> {
             controller.startOperation(Operation.ADD);
@@ -135,15 +134,27 @@ public class UI {
         });
 
 
-
-
-
-
-
         //        JButton bsquare = new JButton("^");
+        bsquare.addActionListener(e -> {
+            controller.startOperation(Operation.SQUARE);
+            operationField.setText(controller.buildOperation());
+            outputField.setText(controller.showAnswer(4));
+        });
+
         //        JButton broot = new JButton("\u221A");
+        broot.addActionListener(e -> {
+            controller.startOperation(Operation.SQUARE_ROOT);
+            operationField.setText(controller.buildOperation());
+            outputField.setText(controller.showAnswer(4));
+        });
         //        JButton bback = new JButton("<--");
-        //        JButton bequals = new JButton("=");
+        bback.addActionListener(e -> {
+            controller.deleteRecentDigitInInput();
+            outputField.setText(controller.showInput());
+            operationField.setText(controller.buildOperation());
+
+        });
+
 
         bequals.addActionListener(e -> {
             controller.equalsInitiate();
