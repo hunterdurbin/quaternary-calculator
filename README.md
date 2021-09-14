@@ -1,4 +1,4 @@
-<h1>Quarternary Calculator Group 4 (update me after everything works)</h1>
+<h1>Quaternary Calculator Group 4 (update me after everything works)</h1>
 
 <h2>How to Use</h2>
 <p1>
@@ -10,11 +10,15 @@
     <li>'-' for subtraction with the next digit entered</li>
     <li>'*' for multiplication  with the next digit entered</li>
     <li>'/' for division with the next digit entered</li>
-    <li>'^' for giving the previous digit an integer with the next digit entered</li>
+    <li>'^' for squaring the previous digit entered</li>
     <li>'square-root' for finding the square root of previous digit</li>
 </ul>
+
 <p>
-    To display your answer, simply press the '='. You can also press 'C' to clear the current operation.
+    To display your answer, simply press the '='.<br> 
+    You can also press 'C' to clear the current operation.<br>
+    Use the radio buttons at the bottom to toggle the <strong>final answer</strong> from 
+    quaternary to decimal, or vice-versa.
 </p>
 
 <h2>General Idea of Process</h2>
@@ -83,30 +87,28 @@ Calculator Class
 
 Text display
 
-- [ ] When a user presses a button, related digit is shown (?)
+- [X] When a user presses a button, related digit is shown (Ethan)
 
 ‘Toggle’ button & indicator on display 
-- [ ] Pressing this button, converts digit currently shown to the other base (?)
-- [ ] It also changes the indicator on the display (4 → 10 or 10 → 4) (?)
+- [X] Pressing this button, converts digit currently shown to the other base (Hunter)
+- [X] It also changes the indicator on the display (4 → 10 or 10 → 4) (Hunter)
 
 
-- [ ] 0 button with connection to related logic (?)
-- [ ] 1 button with connection to related logic (?)
-- [ ] 2 button with connection to related logic (?)
-- [ ] 3 button with connection to related logic (?)
-- [ ] ‘=’ button with connection to related logic (?)
-- [ ] ‘+’ button with connection to related logic (?)
-- [ ] ‘-’ button with connection to related logic (?)
-- [ ] ‘/’ button with connection to related logic (?)
-- [ ] ‘*’ button with connection to related logic (?)
+- [X] 0 button with connection to related logic (Colin/Ethan)
+- [X] 1 button with connection to related logic (Colin/Ethan)
+- [X] 2 button with connection to related logic (Colin/Ethan)
+- [X] 3 button with connection to related logic (Colin/Ethan)
+- [X] ‘=’ button with connection to related logic (Colin/Ethan)
+- [X] ‘+’ button with connection to related logic (Colin/Ethan)
+- [X] ‘-’ button with connection to related logic (Colin/Ethan)
+- [X] ‘/’ button with connection to related logic (Colin/Ethan)
+- [X] ‘*’ button with connection to related logic (Colin/Ethan)
 - [ ] ‘c’ button  with connection to related logic (?)
-- [ ] Squaring button with connection to related logic (?)
-- [ ] Square rooting button with connection to related logic (?)
+- [X] Squaring button with connection to related logic (Colin/Ethan)
+- [X] Square rooting button with connection to related logic (Colin/Ethan)
 
 Controller Class
-- [ ] sends info to and from each class (?)
-
-
+- [X] sends info to and from each class (Hunter)
 - [ ] All tests pass (Everyone)
 
 README.md contains ...
