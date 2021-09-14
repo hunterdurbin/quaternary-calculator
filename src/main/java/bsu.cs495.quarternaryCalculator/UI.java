@@ -3,6 +3,8 @@ package bsu.cs495.quarternaryCalculator;
 import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class UI {
     public static void main(String[] args){
@@ -82,8 +84,73 @@ public class UI {
         outputField.setBorder(blackBorder());
 
         operationField.setHorizontalAlignment(SwingConstants.LEFT);
-        operationField.setFont(new Font("Sherif", Font.PLAIN, 12));
+        operationField.setFont(new Font("Serif", Font.PLAIN, 12));
         operationField.setBorder(blackBorder());
+
+
+        //Event Listeners - commented out code has method that isn't implemented yet
+        b0.addActionListener(e -> {
+            controller.appendDigitToInput(0);
+            outputField.setText(controller.showInput());
+            operationField.setText(controller.buildOperation());
+        });
+
+        b1.addActionListener(e -> {
+            controller.appendDigitToInput(1);
+            outputField.setText(controller.showInput());
+            operationField.setText(controller.buildOperation());
+        });
+
+        b2.addActionListener(e -> {
+            controller.appendDigitToInput(2);
+            outputField.setText(controller.showInput());
+            operationField.setText(controller.buildOperation());
+        });
+
+        b3.addActionListener(e -> {
+            controller.appendDigitToInput(3);
+            outputField.setText(controller.showInput());
+            operationField.setText(controller.buildOperation());
+        });
+        //        JButton bsum = new JButton("+");
+
+        bsum.addActionListener(e -> {
+            controller.startOperation(Operation.ADD);
+            operationField.setText(controller.buildOperation());
+        });
+
+        bsub.addActionListener(e -> {
+            controller.startOperation(Operation.SUBTRACT);
+            operationField.setText(controller.buildOperation());
+        });
+
+        bmul.addActionListener(e -> {
+            controller.startOperation(Operation.MULTIPLY);
+            operationField.setText(controller.buildOperation());
+        });
+
+        bdiv.addActionListener(e -> {
+            controller.startOperation(Operation.DIVIDE);
+            operationField.setText(controller.buildOperation());
+        });
+
+
+
+
+
+
+
+        //        JButton bsquare = new JButton("^");
+        //        JButton broot = new JButton("\u221A");
+        //        JButton bback = new JButton("<--");
+        //        JButton bequals = new JButton("=");
+
+        bequals.addActionListener(e -> {
+            controller.equalsInitiate();
+            operationField.setText(controller.buildOperation());
+            outputField.setText(controller.showAnswer(4));
+        });
+
 
     }
 
