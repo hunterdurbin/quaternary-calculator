@@ -11,6 +11,7 @@ public class Controller {
     private boolean isNumber1 = false;
     private boolean isNumber2 = false;
     private boolean isAnswer = false;
+    private int base = 4;
 
     public Controller() {
         this.operation = Operation.NONE;
@@ -22,10 +23,13 @@ public class Controller {
 
     public void appendDigitToInput(int digit) {
         isInput = true;
+        isAnswer = false;
         input = Integer.parseInt(String.format("%d%d", input, digit));
     }
 
     public void deleteRecentDigitInInput() {
+        isInput = true;
+        isAnswer = false;
         if (input == 0) {
             return;
         }
@@ -42,17 +46,17 @@ public class Controller {
         operation = Operation.NONE;
         number1 = 0;
         number2 = 0;
-        answer = 0;
         isNumber1 = false;
         isNumber2 = false;
-        isAnswer = false;
+        isInput = true;
+        isAnswer = true;
     }
 
     public int getInput() {
         return input;
     }
 
-    public int getAnswer(int base) {
+    public int getAnswer() {
         if (base == 10) {
             BaseConvertor convertor = new BaseConvertor();
             return convertor.base4To10(answer);
@@ -60,12 +64,23 @@ public class Controller {
         return answer;
     }
 
-    public String showAnswer(int base) {
-        return String.valueOf(getAnswer(base));
+    public String showAnswer() {
+        return String.valueOf(getAnswer());
     }
 
     public String showInput() {
         return String.valueOf(getInput());
+    }
+
+    public String showAuto() {
+        if (isAnswer) {
+            return showAnswer();
+        }
+        return showInput();
+    }
+
+    public void changeBase(int base) {
+        this.base = base;
     }
 
     private boolean storeInputToNumber1() {
@@ -107,6 +122,7 @@ public class Controller {
             }
             default -> answer = 0;
         }
+        isAnswer = true;
     }
 
     public void equalsInitiate() {
@@ -123,7 +139,6 @@ public class Controller {
         }
         clearInput();
     }
-
 
     public String buildOperation() {
         if (operation.equals(Operation.SQUARE)) {
@@ -143,13 +158,4 @@ public class Controller {
         return String.format("%d %s %d =", number1, operation.label, number2);
     }
 
-    public String convertBase4ToBase10(String number) {
-        BaseConvertor convertor = new BaseConvertor();
-        return String.valueOf(convertor.base4To10(Integer.parseInt(number)));
-    }
-
-    public String convertBase10ToBase4(String number) {
-        BaseConvertor convertor = new BaseConvertor();
-        return String.valueOf(convertor.base10To4(Integer.parseInt(number)));
-    }
 }

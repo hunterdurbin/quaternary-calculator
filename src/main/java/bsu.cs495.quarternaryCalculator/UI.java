@@ -57,7 +57,7 @@ public class UI {
 
         decimal.setBounds(50, 275, 100,20);
         quaternary.setBounds(50,300, 100,20);
-        decimal.setSelected(true);
+        quaternary.setSelected(true);
 
         panel.add(b0);
         panel.add(b1);
@@ -136,13 +136,13 @@ public class UI {
         bsquare.addActionListener(e -> {
             controller.startOperation(Operation.SQUARE);
             operationField.setText(controller.buildOperation());
-            outputField.setText(controller.showAnswer(4));
+            outputField.setText(controller.showAnswer());
         });
 
         broot.addActionListener(e -> {
             controller.startOperation(Operation.SQUARE_ROOT);
             operationField.setText(controller.buildOperation());
-            outputField.setText(controller.showAnswer(4));
+            outputField.setText(controller.showAnswer());
         });
 
         bback.addActionListener(e -> {
@@ -155,7 +155,18 @@ public class UI {
         bequals.addActionListener(e -> {
             controller.equalsInitiate();
             operationField.setText(controller.buildOperation());
-            outputField.setText(controller.showAnswer(4));
+            outputField.setText(controller.showAnswer());
+            controller.resetMemory();
+        });
+
+        quaternary.addActionListener(e -> {
+            controller.changeBase(4);
+            outputField.setText(controller.showAnswer());
+        });
+
+        decimal.addActionListener(e -> {
+            controller.changeBase(10);
+            outputField.setText(controller.showAnswer());
         });
 
     }
