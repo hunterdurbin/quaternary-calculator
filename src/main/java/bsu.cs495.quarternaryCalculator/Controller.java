@@ -51,10 +51,12 @@ public class Controller {
         operation = Operation.NONE;
         number1 = 0;
         number2 = 0;
+        input = 0;
         isNumber1 = false;
         isNumber2 = false;
         isInput = true;
-        isAnswer = true;
+        isAnswer = false;
+        readyToReset = false;
     }
 
     public void resetIfNeeded() {
@@ -94,22 +96,18 @@ public class Controller {
         this.base = base;
     }
 
-    private boolean storeInputToNumber1() {
+    private void storeInputToNumber1() {
         if (!isNumber1) {
             number1 = input;
             isNumber1 = true;
-            return true;
         }
-        return false;
     }
 
-    private boolean storeInputToNumber2() {
+    private void storeInputToNumber2() {
         if (!isNumber2) {
             number2 = input;
             isNumber2 = true;
-            return true;
         }
-        return false;
     }
 
     private void clearInput() {
@@ -118,7 +116,7 @@ public class Controller {
     }
 
     public void startOperation(Operation operation) {
-        resetMemory();
+        resetIfNeeded();
         storeInputToNumber1();
         clearInput();
         this.operation = operation;
@@ -139,7 +137,7 @@ public class Controller {
     }
 
     public void equalsInitiate() {
-        if (!isNumber1 || operation.equals(Operation.NONE)) {
+        if (!isNumber1 || !isInput || operation.equals(Operation.NONE)) {
             return;
         }
         storeInputToNumber2();
