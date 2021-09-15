@@ -2,8 +2,7 @@
 
 <h2>How to Use</h2>
 <p1>
-    Click the number buttons on the calculator to form a quaternary number.<br>
-    Then press one of the buttons for the corresponding operation: 
+    After downloading the project and running the UI class, click the number buttons on the calculator to form a quaternary number. Then press one of the buttons for the corresponding operation: 
 </p1>
 <ul>
     <li>' + ' for addition with the next digit entered</li>
