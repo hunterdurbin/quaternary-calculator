@@ -67,25 +67,25 @@
 BaseConvertor Class 
 - [X] converts base 4 to base 10 (Hunter)
 - [X] related test are made and pass (Hunter)
-- [X] converts base 10 to 4 (Jake)
-- [ ] related test are made and pass (?)
+- [X] converts base 10 to 4 (Eric)
+- [ ] related test are made and pass (Jake/Dotty)
 
 
 
 
 Calculator Class
 - [X] Addition (Jake)
-- [ ] Related test are made and pass (Jake)
+- [X] Related test are made and pass (Jake)
 - [X] Subtraction (Jake)
-- [ ] Related test are made and pass (Jake)
+- [X] Related test are made and pass (Jake)
 - [X] Multiplication (Jake)
-- [ ] Related test are made and pass (Jake)
+- [X] Related test are made and pass (Jake)
 - [X] Division (Jake)
-- [ ] Related test are made and pass (Jake)
-- [ ] Square root (Jake)
-- [ ] Related test are made and pass (Jake)
-- [ ] Squared (Jake)
-- [ ] Related test are made and pass (Jake)
+- [X] Related test are made and pass (Jake)
+- [X] Square root (Jake)
+- [X] Related test are made and pass (Jake)
+- [X] Squared (Jake)
+- [X] Related test are made and pass (Jake)
 
 
 [display] class
@@ -109,7 +109,7 @@ Text display
 - [X] ‘-’ button with connection to related logic (Colin/Ethan)
 - [X] ‘/’ button with connection to related logic (Colin/Ethan)
 - [X] ‘*’ button with connection to related logic (Colin/Ethan)
-- [ ] ‘c’ button  with connection to related logic (?)
+- [X] ‘c’ button  with connection to related logic (Jake)
 - [X] Squaring button with connection to related logic (Colin/Ethan)
 - [X] Square rooting button with connection to related logic (Colin/Ethan)
 
