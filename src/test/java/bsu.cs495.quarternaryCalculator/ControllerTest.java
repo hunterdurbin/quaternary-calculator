@@ -145,7 +145,7 @@ public class ControllerTest {
     void testBuildOperation_1() {
         Controller controller = new Controller();
         controller.appendDigitToInput(31);
-        Assertions.assertEquals("31", controller.buildOperation());
+        Assertions.assertEquals("31", controller.buildOperationAuto());
     }
 
     @Test
@@ -154,7 +154,7 @@ public class ControllerTest {
     void testBuildOperation_2() {
         Controller controller = new Controller();
         controller.appendDigitToInput(10);
-        Assertions.assertEquals("10", controller.buildOperation());
+        Assertions.assertEquals("10", controller.buildOperationAuto());
     }
 
     @Test
@@ -164,7 +164,7 @@ public class ControllerTest {
         Controller controller = new Controller();
         controller.appendDigitToInput(11);
         controller.startOperation(Operation.MULTIPLY);
-        Assertions.assertEquals("11 X", controller.buildOperation());
+        Assertions.assertEquals("11 X", controller.buildOperationAuto());
     }
 
     @Test
@@ -176,7 +176,7 @@ public class ControllerTest {
         controller.startOperation(Operation.ADD);
         controller.appendDigitToInput(3);
         controller.equalsInitiate();
-        Assertions.assertEquals("10 + 3 =", controller.buildOperation());
+        Assertions.assertEquals("10 + 3 = 13", controller.buildOperationAuto());
     }
 
     @Test
@@ -187,7 +187,27 @@ public class ControllerTest {
         controller.appendDigitToInput(11);
         controller.startOperation(Operation.MULTIPLY);
         controller.appendDigitToInput(2);
-        Assertions.assertEquals("11 X 2", controller.buildOperation());
+        Assertions.assertEquals("11 X 2", controller.buildOperationAuto());
+    }
+
+    @Test
+    @DisplayName("There is 1 number, and the operation is square")
+//    @Disabled
+    void testBuildOperation_6() {
+        Controller controller = new Controller();
+        controller.appendDigitToInput(21);
+        controller.startOperation(Operation.SQUARE);
+        Assertions.assertEquals("21^2 = 1101", controller.buildOperationAuto());
+    }
+
+    @Test
+    @DisplayName("There is 1 number, and the operation is sqrt")
+//    @Disabled
+    void testBuildOperation_7() {
+        Controller controller = new Controller();
+        controller.appendDigitToInput(21);
+        controller.startOperation(Operation.SQUARE_ROOT);
+        Assertions.assertEquals("sqrt(21) = 3", controller.buildOperationAuto());
     }
 }
 
