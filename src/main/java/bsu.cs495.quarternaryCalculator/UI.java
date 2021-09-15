@@ -164,7 +164,7 @@ public class UI {
 
         bclear.addActionListener(e -> {
             controller.resetMemory();
-            outputField.setText(controller.showAnswer());
+            outputField.setText(controller.buildOperationAuto());
             operationField.setText(controller.buildOperationAuto());
         });
 
