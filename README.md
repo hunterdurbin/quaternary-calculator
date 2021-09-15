@@ -2,7 +2,7 @@
 
 <h2>How to Use</h2>
 <p1>
-    Click on a number to choose an operating number. 
+    Click the number buttons on the calculator to form a quaternary number.<br>
     Then press one of the buttons for the corresponding operation: 
 </p1>
 <ul>
@@ -15,10 +15,16 @@
 </ul>
 
 <p>
+    Input another number if needed for the current operation.<br>
     To display your answer, simply press the '='.<br> 
     You can also press 'C' to clear the current operation.<br>
-    Use the radio buttons at the bottom to toggle the <strong>final answer</strong> from 
-    quaternary to decimal, or vice-versa.
+    Use the radio buttons at the bottom to toggle the operation above the input from 
+    quaternary to decimal, or vice-versa.<br>
+    <br>
+    <strong>Toggling Bases:</strong> As you are entering your input, 
+    it will <strong>always</strong> show up as quaternary. However, the build operation
+    above the input field will always display the selected base system. Also note that the
+    input field will display the <storng>final answer</storng> in the selected base system.
 </p>
 
 <h2>General Idea of Process</h2>
