@@ -1,4 +1,4 @@
-<h1>Quaternary Calculator Group 4 (update me after everything works)</h1>
+<h1>Quaternary Calculator Group 4</h1>
 
 <h2>How to Use</h2>
 <p1>
@@ -6,21 +6,20 @@
     Then press one of the buttons for the corresponding operation: 
 </p1>
 <ul>
-    <li>'+' for addition with the next digit entered</li>
-    <li>'-' for subtraction with the next digit entered</li>
-    <li>'*' for multiplication  with the next digit entered</li>
-    <li>'/' for division with the next digit entered</li>
-    <li>'^' for squaring the previous digit entered</li>
-    <li>'square-root' for finding the square root of previous digit</li>
+    <li>' + ' for addition with the next digit entered</li>
+    <li>' - ' for subtraction with the next digit entered</li>
+    <li>' * ' for multiplication  with the next digit entered</li>
+    <li>' / ' for division with the next digit entered</li>
+    <li>' ^ ' for squaring the previous digit entered</li>
+    <li>' √ ' for finding the square root of previous digit</li>
 </ul>
 
 <p>
-    Input another number if needed for the current operation.<br>
-    To display your answer, simply press the '='.<br> 
-    You can also press 'C' to clear the current operation.<br>
+    Click on another number if needed for the current operation. To display your answer, simply press the '='.
+    You can also press 'C' to reset the current operation, or press ' <-- ' to clear the last digit.
     Use the radio buttons at the bottom to toggle the operation above the input from 
-    quaternary to decimal, or vice-versa.<br>
-    <br>
+    quaternary to decimal, or vice-versa.
+    <br> <br>
     <strong>Toggling Bases:</strong> As you are entering your input, 
     it will <strong>always</strong> show up as quaternary. However, the build operation
     above the input field will always display the selected base system. Also note that the
@@ -29,15 +28,15 @@
 
 <h2>General Idea of Process</h2>
 <ol type = 1>
-    <li>The user will interact with the [display] class by entering numbers and operations (base4)</li>
-    <li>The [display] class will send that input to the Converter class</li>
+    <li>The user will interact with the UI class by entering numbers and operations (base4)</li>
+    <li>The UI class will send that input to the Converter class</li>
     <li>Inside the Converter class, the base 4 input will be converted to base 10</li>
     <li>The edited input will be sent from the Converter class to the Calculator class</li>
     <li>The Calculator class will calculate the operation in base 10</li>
     <li>The answer will be sent from the Calculator class to the Converter class</li>
     <li>The answer will be converted from base 10 into base 4</li>
-    <li>The answer will be sent from the Converter class to the [display] class</li>
-    <li>The [display] class will be shown to the user</li>
+    <li>The answer will be sent from the Converter class to the UI class</li>
+    <li>The UI class will be shown to the user</li>
 </ol>
 
 <h2>Teamwork</h2>
@@ -68,7 +67,7 @@ BaseConvertor Class
 - [X] converts base 4 to base 10 (Hunter)
 - [X] related test are made and pass (Hunter)
 - [X] converts base 10 to 4 (Eric)
-- [ ] related test are made and pass (Jake/Dotty)
+- [X] related test are made and pass (Jake)
 
 
 
@@ -88,7 +87,7 @@ Calculator Class
 - [X] Related test are made and pass (Jake)
 
 
-[display] class
+UI class
 
 
 Text display
@@ -115,13 +114,13 @@ Text display
 
 Controller Class
 - [X] sends info to and from each class (Hunter)
-- [ ] All tests pass (Everyone)
+- [X] All tests pass
 
 README.md contains ...
-- [ ] An explanation of the project (Dotty)
-- [ ] Dependencies (Dotty)
-- [ ] Tasks and division of labor → “ ‘name of team member’ = ‘task of the team member’ in each line.’ (Dotty)
-- [ ] List of meetings that includes who attended, medium of meeting and points of discussion (Hunter)
+- [X] An explanation of the project (Dotty)
+- [X] Dependencies (Dotty)
+- [X] Tasks and division of labor are labelled with corresponding team member name (Dotty)
+- [X] List of meetings that includes who attended, medium of meeting and points of discussion (Hunter)
 
 <h2>Dependencies</h2>
 <ul>
