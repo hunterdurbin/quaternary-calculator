@@ -86,8 +86,6 @@ public class BaseConvertorTest {
 
     }
 
-    //Possibly will add tests for negative number calculations with the base4To10 method. (Not required according to Ergin)
-
     @Test
     @DisplayName("Test base4To10 computes base4(0) => base10(0) correctly")
     void testBase4To10_1() {

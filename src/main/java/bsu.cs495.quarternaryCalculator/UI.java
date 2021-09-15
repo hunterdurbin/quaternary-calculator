@@ -25,6 +25,7 @@ public class UI {
         JButton broot = new JButton("\u221A");
         JButton bback = new JButton("<--");
         JButton bequals = new JButton("=");
+        JButton bclear = new JButton("C");
         JLabel outputField = new JLabel();
         JLabel operationField = new JLabel();
 
@@ -53,11 +54,12 @@ public class UI {
         broot.setBounds(92,210,50,50);
         bback.setBounds(142,210,50,50);
         bequals.setBounds(192,210,50,50);
+        bclear.setBounds(192, 260, 50, 50);
         outputField.setBounds(42,45, 200, 35);
         operationField.setBounds(42, 15, 200, 25);
 
-        decimal.setBounds(50, 275, 100,20);
-        quaternary.setBounds(50,300, 100,20);
+        decimal.setBounds(42, 275, 100,20);
+        quaternary.setBounds(42,300, 100,20);
         quaternary.setSelected(true);
 
         panel.add(b0);
@@ -72,6 +74,7 @@ public class UI {
         panel.add(broot);
         panel.add(bback);
         panel.add(bequals);
+        panel.add(bclear);
         panel.add(outputField);
         panel.add(operationField);
 
@@ -157,6 +160,10 @@ public class UI {
             controller.equalsInitiate();
             operationField.setText(controller.buildOperationAuto());
             outputField.setText(controller.showAnswer());
+        });
+
+        bclear.addActionListener(e -> {
+            //code here
         });
 
         quaternary.addActionListener(e -> {
