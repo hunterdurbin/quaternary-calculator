@@ -11,6 +11,7 @@ public class Controller {
     private boolean isNumber1 = false;
     private boolean isNumber2 = false;
     private boolean isAnswer = false;
+    private boolean readyToReset = true;
     private int base = 4;
 
     public Controller() {
@@ -22,12 +23,16 @@ public class Controller {
     }
 
     public void appendDigitToInput(int digit) {
+        resetIfNeeded();
+        readyToReset = false;
         isInput = true;
         isAnswer = false;
         input = Integer.parseInt(String.format("%d%d", input, digit));
     }
 
     public void deleteRecentDigitInInput() {
+        resetIfNeeded();
+        readyToReset = false;
         isInput = true;
         isAnswer = false;
         if (input == 0) {
@@ -50,6 +55,12 @@ public class Controller {
         isNumber2 = false;
         isInput = true;
         isAnswer = true;
+    }
+
+    public void resetIfNeeded() {
+        if (readyToReset) {
+            resetMemory();
+        }
     }
 
     public int getInput() {
@@ -115,10 +126,12 @@ public class Controller {
             case SQUARE -> {
                 answer = calculator.square(number1);
                 isNumber2 = true;
+                readyToReset = true;
             }
             case SQUARE_ROOT -> {
                 answer = calculator.squareRoot(number1);
                 isNumber2 = true;
+                readyToReset = true;
             }
             default -> answer = 0;
         }
@@ -138,14 +151,25 @@ public class Controller {
             default -> answer = 0;
         }
         clearInput();
+        isAnswer = true;
+        readyToReset = true;
     }
 
-    public String buildOperation() {
+    public String buildOperationAuto() {
+        BaseConvertor convertor = new BaseConvertor();
+        if (base == 10) {
+            return buildOperationBaseN(convertor.base4To10(input), convertor.base4To10(number1),
+                    convertor.base4To10(number2), convertor.base4To10(answer));
+        }
+        return buildOperationBaseN(input, number1, number2, answer);
+    }
+
+    private String buildOperationBaseN(int input, int number1, int number2, int answer) {
         if (operation.equals(Operation.SQUARE)) {
-            return String.format("%d^2 =", number1);
+            return String.format("%d^2 = %d", number1, answer);
         }
         if (operation.equals(Operation.SQUARE_ROOT)) {
-            return String.format("sqrt(%d) =", number1);
+            return String.format("sqrt(%d) = %d", number1, answer);
         }
 
         if (!isNumber1 && !isNumber2 && isInput) {
@@ -155,7 +179,8 @@ public class Controller {
         } else if (!isNumber2) {
             return String.format("%d %s %d", number1, operation.label, input);
         }
-        return String.format("%d %s %d =", number1, operation.label, number2);
+        return String.format("%d %s %d = %d", number1, operation.label, number2, answer);
     }
+
 
 }

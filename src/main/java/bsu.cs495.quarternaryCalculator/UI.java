@@ -93,80 +93,81 @@ public class UI {
         b0.addActionListener(e -> {
             controller.appendDigitToInput(0);
             outputField.setText(controller.showInput());
-            operationField.setText(controller.buildOperation());
+            operationField.setText(controller.buildOperationAuto());
         });
 
         b1.addActionListener(e -> {
             controller.appendDigitToInput(1);
             outputField.setText(controller.showInput());
-            operationField.setText(controller.buildOperation());
+            operationField.setText(controller.buildOperationAuto());
         });
 
         b2.addActionListener(e -> {
             controller.appendDigitToInput(2);
             outputField.setText(controller.showInput());
-            operationField.setText(controller.buildOperation());
+            operationField.setText(controller.buildOperationAuto());
         });
 
         b3.addActionListener(e -> {
             controller.appendDigitToInput(3);
             outputField.setText(controller.showInput());
-            operationField.setText(controller.buildOperation());
+            operationField.setText(controller.buildOperationAuto());
         });
 
         bsum.addActionListener(e -> {
             controller.startOperation(Operation.ADD);
-            operationField.setText(controller.buildOperation());
+            operationField.setText(controller.buildOperationAuto());
         });
 
         bsub.addActionListener(e -> {
             controller.startOperation(Operation.SUBTRACT);
-            operationField.setText(controller.buildOperation());
+            operationField.setText(controller.buildOperationAuto());
         });
 
         bmul.addActionListener(e -> {
             controller.startOperation(Operation.MULTIPLY);
-            operationField.setText(controller.buildOperation());
+            operationField.setText(controller.buildOperationAuto());
         });
 
         bdiv.addActionListener(e -> {
             controller.startOperation(Operation.DIVIDE);
-            operationField.setText(controller.buildOperation());
+            operationField.setText(controller.buildOperationAuto());
         });
 
         bsquare.addActionListener(e -> {
             controller.startOperation(Operation.SQUARE);
-            operationField.setText(controller.buildOperation());
+            operationField.setText(controller.buildOperationAuto());
             outputField.setText(controller.showAnswer());
         });
 
         broot.addActionListener(e -> {
             controller.startOperation(Operation.SQUARE_ROOT);
-            operationField.setText(controller.buildOperation());
+            operationField.setText(controller.buildOperationAuto());
             outputField.setText(controller.showAnswer());
         });
 
         bback.addActionListener(e -> {
             controller.deleteRecentDigitInInput();
             outputField.setText(controller.showInput());
-            operationField.setText(controller.buildOperation());
+            operationField.setText(controller.buildOperationAuto());
 
         });
 
         bequals.addActionListener(e -> {
             controller.equalsInitiate();
-            operationField.setText(controller.buildOperation());
+            operationField.setText(controller.buildOperationAuto());
             outputField.setText(controller.showAnswer());
-            controller.resetMemory();
         });
 
         quaternary.addActionListener(e -> {
             controller.changeBase(4);
+            operationField.setText(controller.buildOperationAuto());
             outputField.setText(controller.showAuto());
         });
 
         decimal.addActionListener(e -> {
             controller.changeBase(10);
+            operationField.setText(controller.buildOperationAuto());
             outputField.setText(controller.showAuto());
         });
 
