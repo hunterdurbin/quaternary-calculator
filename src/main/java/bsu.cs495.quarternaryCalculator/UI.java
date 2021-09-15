@@ -163,7 +163,9 @@ public class UI {
         });
 
         bclear.addActionListener(e -> {
-            //code here
+            controller.resetMemory();
+            outputField.setText(controller.showAnswer());
+            operationField.setText(controller.buildOperationAuto());
         });
 
         quaternary.addActionListener(e -> {
