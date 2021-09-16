@@ -130,8 +130,8 @@ README.md contains ...
 
 <h2>Dependencies</h2>
 <ul>
-    <li>testCompile('org.junit.jupiter:junit-jupiter-api:5.3.1')</li>
-    <li>testCompile('org.junit.jupiter:junit-jupiter-engine:5.3.1')</li>
+    <li>testImplementation('org.junit.jupiter:junit-jupiter-api:5.7.2')</li>
+    <li>testRuntimeOnly('org.junit.jupiter:junit-jupiter-engine:5.7.2')</li>
 </ul>
 
 
