@@ -1,9 +1,13 @@
 <h1>Quaternary Calculator Group 4</h1>
 
+![yo](./images/default.png)
+
 <h2>How to Use</h2>
-<p1>
-    After downloading the project and running the UI class, click the number buttons on the calculator to form a quaternary number. Then press one of the buttons for the corresponding operation: 
-</p1>
+<p>
+    After downloading the project and running the UI class, 
+    click the number buttons on the calculator to form a quaternary number. 
+    Then press one of the buttons for the corresponding operation: 
+</p>
 <ul>
     <li>' + ' for addition with the next digit entered</li>
     <li>' - ' for subtraction with the next digit entered</li>
@@ -24,6 +28,9 @@
     above the input field will always display the selected base system. Also note that the
     input field will display the <storng>final answer</storng> in the selected base system.
 </p>
+
+![decimal](./images/sum-decimal.png)
+![quaternary](./images/sum-quaternary.png)
 
 <h2>General Idea of Process</h2>
 <ol type = 1>
